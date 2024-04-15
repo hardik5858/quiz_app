@@ -30,17 +30,64 @@ class HomeScreen extends StatelessWidget {
         title: Text('Quiz App'),
       ),
       body: Center(
-        child: ElevatedButton(
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => QuizScreen(),
+        child: Stack(
+          children: [
+            Align(
+              alignment: Alignment.center,
+              child: ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => QuizScreen(),
+                    ),
+                  );
+                },
+                child: Text('Start Quiz'),
               ),
-            );
-          },
-          child: Text('Start Quiz'),
-        ),
+            ),
+            Align(
+              alignment: Alignment.bottomCenter,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Container(
+                    margin: EdgeInsets.symmetric(vertical: 10),
+                    decoration: BoxDecoration(
+                      color: Colors.redAccent.shade100,
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    child: Padding(
+                      padding: EdgeInsets.all(16),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text("Note :",style: TextStyle(color: Colors.red),),
+                          Text("1 : After time Complete Automatic Swift next question",
+                            textAlign: TextAlign.center,
+                            style: TextStyle(fontSize: 15.0,color: Colors.white),
+                          ),
+                          Text("2 : One time option select",
+                            textAlign: TextAlign.center,
+                            style: TextStyle(fontSize: 15.0,color: Colors.white),
+                          ),
+                          Text("3 : Select wrong answered minus points",
+                            textAlign: TextAlign.center,
+                            style: TextStyle(fontSize: 15.0,color: Colors.white),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 40,)
+                ],
+              ),
+            ),
+
+          ],
+        )
       ),
     );
   }
