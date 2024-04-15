@@ -171,8 +171,6 @@ class _QuizScreenState extends State<QuizScreen> {
       'explanation': 'It is amongst the most popular falls in the Northeast and is located on the outskirts of the capital city of Meghalaya.',
       'score': 200
     },
-
-    // Add more questions here
   ];
 
   @override
